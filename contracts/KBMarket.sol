@@ -126,7 +126,7 @@ contract KBMarket is ReentrancyGuard {
              IERC721(nftContract).transferFrom(address(this), msg.sender, tokenId);
              idToMarketToken[itemId].owner = payable(msg.sender);
              idToMarketToken[itemId].sold = true;
-             _tokenSold.increment();
+             _tokensSold.increment();
 
              payable(owner).transfer(listingPrice);
 
