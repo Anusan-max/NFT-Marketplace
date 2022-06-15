@@ -64,30 +64,43 @@ export default function MyAssets() {
 
 
   return (
-    <div className='flex justify-center'>
-        <div className='px-4' style={{maxWidth: '160px'}}>
-        <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 pt-4'>
-          {
-            nfts.map((nft, i)=>(
-              <div key={i} className='border shadow rounded-x1 overflow-hidden'>
-                <img src={nft.image} />
-                <div className='p-4'>
-                  <p style={{height:'64px'}} className='text-3x1 font-semibold'>{
-                    nft.name}</p>
-                    <div style={{height:'72px', overflow:'hidden'}}>
-                      <p className='text-grey-400'>{nft.description}</p>
-                    </div>
-                    </div>
-                    <div className='p-4 bg-black'>
-                      <p className='text-3x-1 mb-4 font-bold text-white'>{nft.price} ETH</p>
-                    </div>
-                    </div>
-                    
-            ))
-          }
 
-    </div>
-    </div>
-    </div>
+    <><div class="row">
+      <div class="column">
+        <div class="card">..</div>
+      </div>
+      <div class="column">
+        <div class="card">..</div>
+      </div>
+      <div class="column">
+        <div class="card">..</div>
+      </div>
+      <div class="column">
+        <div class="card">..</div>
+      </div>
+    </div><div class='container1'>
+        <div class='card'>
+          {nfts.map((nft, i) => (
+            <div key={i} class='card-header'>
+              <img src={nft.image} width="100%" />
+              <div class='card-body'>
+                <h4>{nft.name}</h4>
+                <div>
+                  <p>{nft.description}</p>
+                </div>
+              </div>
+              <div class='user'>
+
+                <tag>{nft.price} ETH</tag>
+              </div>
+
+            </div>
+
+          ))}
+
+        </div>
+      </div></>
+
+  
   )
 }

@@ -2,34 +2,29 @@ import '../styles/globals.css'
 import './app.css'
 import Link from 'next/link'
 
+
+
 function KryptoBirdMarketplace({Component, pageProps}) {
   return (
-    <div>
-      <nav className='border-b p-6' style={{backgroundColor:'orange'}}>
-        <p className='text-4x1 font-bold text-white'>NFT Marketplace</p>
-        <div className='flex mt-4 justify-center'>
+
+        <div>
+          <div className='topnav-right'>
+        <ul>
           <Link href='/'>
-            <a className='mr-4'>
-              Main Marketplace
-            </a>
+         <li><a class="active">Main Marketplace</a></li>
           </Link>
           <Link href='/mint-item'>
-            <a className='mr-6'>
-              Mint Tokens
-            </a>
+          <li><a>Mint Tokens</a></li>
           </Link>
           <Link href='/my-nfts'>
-            <a className='mr-6'>
-              My NFTs
-            </a>
+          <li><a>My NFTs</a></li>
           </Link>
           <Link href='/account-dashboard'>
-            <a className='mr-6'>
-              Account Dashboard
-            </a>
+          <li><a>Account Dashboard</a></li>
           </Link>
-        </div>
-      </nav>
+          </ul>    
+
+</div>
       <Component {...pageProps} />
     </div>
   )

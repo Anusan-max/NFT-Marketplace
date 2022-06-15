@@ -3,26 +3,185 @@
 }
 
 body {
-    background-color: ghostwhite;
+    background-color: white;
     background-repeat: no-repeat;
     background-size: cover;
     padding: 0;
     margin: 0;
     text-align: center;
-    font-size: 16px;
+    font-size: 15px;
     font-weight: normal;
+    position: center;
+    font-family: sans-serif;
 
 }
 
 a {
-    color: #00CED1;
-    transition: all 0.2s;
+    color: #000;
+  }
+  .h1 {
+    font-size: large;
+  }
+  
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: black;
+    text-align: center;
+  }
+  
+  li {
+    float: left;
+  }
+  
+  li a {
+    display: block;
+    color: rgba(243, 240, 240, 0.856);
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    justify-content: center;
+    
+  }
+
+  
+  li a:hover {
+    background-color: rgb(207, 204, 204);
+  }
+
+
+.center {
+  padding: 30px;
+
 }
 
-a:hover {
-  opacity: 0.6;
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: horizontal;
+  font-family:Arial, Helvetica, sans-serif;
+  font-size: medium;
 }
 
-a:active {
-    opacity: 1
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+  position: relative;
+  margin-left: 460px;
+  margin-right: 460px;
+  margin-top: 50px;
+  border-radius: 25px 25px;
+  
+  
 }
+
+.button {
+  position: bottom;
+  top:50%;
+  background-color: rgb(25, 134, 223);
+  color: #fff;
+  border:white; 
+  border-radius:40px; 
+  padding:10px;
+  min-height:45px; 
+  min-width: 100px;
+  margin: 60px;
+  
+}
+
+.img1 {
+  padding-right: 60px;
+}
+
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+* {
+  box-sizing: border-box;
+}
+
+.container1{
+  display: flex;
+  width: 1900px;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  margin-top: 50px;
+  
+}
+.card {
+  margin: 10px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  width: 300px;
+  position: relative;
+}
+.card-header img {
+  width: 70%;
+  height: 200px;
+  object-fit: cover;
+}
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  
+  padding: 20px;
+  min-height: 250px;
+}
+
+.tag {
+  background: #cccccc;
+  border-radius: 50px;
+  font-size: 12px;
+  margin: 0;
+  color: #fff;
+  padding: 2px 10px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.tag-teal {
+  background-color: #47bcd4;
+}
+.tag-purple {
+  background-color: #5e76bf;
+}
+.tag-pink {
+  background-color: #cd5b9f;
+}
+
+.card-body p {
+  font-size: 13px;
+  margin: 0 0 40px;
+}
+.user {
+  display: flex;
+  margin-top: auto;
+}
+
+.user img {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+}
+.user-info h5 {
+  margin: 0;
+}
+.user-info small {
+  color: #545d7a;
+}
+
+
+
+
+
+
