@@ -19,8 +19,7 @@ export default function Home() {
   }, [])
 
   async function loadNFts() {
-    // what we want to load:
-    // **provider, tokenContract, marketContract, data for marketItems***
+
 
     const provider = new ethers.providers.JsonRpcProvider()
     const tokenContract = new ethers.Contract(nftaddress, NFT.abi, provider)
@@ -29,7 +28,7 @@ export default function Home() {
 
     const items = await Promise.all(data.map(async i => {
       const tokenUri = await tokenContract.tokenURI(i.tokenId)
-      // we want to get the token metadata -json
+
       const meta = await axios.get(tokenUri)
       let price = ethers.utils.formatUnits(i.price.toString(), 'ether')
       let item = {
@@ -49,7 +48,7 @@ export default function Home() {
 
   }
 
-  // function to buy nfts for market
+
 
   async function buyNFT(nft) {
     const web3Modal = new Web3Modal()

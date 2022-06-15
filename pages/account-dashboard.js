@@ -1,5 +1,5 @@
 
-// we want to load the users nfts and display
+
 
 import {ethers} from 'ethers'
 import {useEffect, useState} from 'react'
@@ -24,8 +24,7 @@ export default function AccountDashBoard() {
   }, [])
 
   async function loadNFts() {
-    // what we want to load:
-    // we want to get the msg.sender hook up to the signer to display the owner nfts
+
 
 
     const web3Modal = new Web3Modal()
@@ -39,7 +38,7 @@ export default function AccountDashBoard() {
 
     const items = await Promise.all(data.map(async i => {
       const tokenUri = await tokenContract.tokenURI(i.tokenId)
-      // we want to get the token metadata -json
+
       const meta = await axios.get(tokenUri)
       let price = ethers.utils.formatUnits(i.price.toString(), 'ether')
       let item = {
@@ -54,7 +53,7 @@ export default function AccountDashBoard() {
       return item;
     }))
 
-    // create a filtered array of items that have been sold
+
     const soldItems = items.filter(i=> i.sold)
     setSold(soldItems)
     setNFTs(items)

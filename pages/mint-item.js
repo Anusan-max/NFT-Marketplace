@@ -9,7 +9,7 @@ import { useRouter } from 'next/router'
 
 
 
-// in this component we set the ipfs up to host out nft data of file storage
+
 
 const client = ipfsHttpClient('https://ipfs.infura.io:5001/api/v0')
 
@@ -21,7 +21,7 @@ description:''})
    const router = useRouter()
 
 
-   // set up a function to fireoff when we update files in our form - we can add our NFT images- IPFS
+
 
 
    async function onChange(e) {
@@ -41,14 +41,14 @@ description:''})
    async function createMarket() {
        const {name, description, price} = formInput
        if(!name || !description || !price || !fileUrl) return
-       // upload to IPFS
+
        const data = JSON.stringify({
            name, description, image: fileUrl
        })
        try {
         const added = await client.add(data)
         const url = `https://ipfs.infura.io/ipfs/${added.path}`
-        // run a function that creates sale and passes in the url
+
        createSale(url)
     } catch (error){
       console.log('Error uploading file', error)
@@ -57,13 +57,13 @@ description:''})
    }
 
    async function createSale(url) {
-       // create the items and list them on the marketplace
+
        const web3Modal = new Web3Modal()
        const connection = await web3Modal.connect()
        const provider = new ethers.providers.Web3Provider(connection)
        const signer = provider.getSigner()
 
-       // we want to create the token
+
        let contract = new ethers.Contract(nftaddress, NFT.abi, signer)
        let transaction = await contract.mintToken(url)
        let tx = await transaction.wait()
