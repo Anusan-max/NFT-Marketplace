@@ -1,7 +1,6 @@
 import '../styles/globals.css'
 import './app.css'
 import Link from 'next/link'
-import { useUnityContext } from "react-unity-webgl";
 
 
 
@@ -25,9 +24,6 @@ function KryptoBirdMarketplace({Component, pageProps}) {
           </Link>
           <Link href='/account-dashboard'>
           <li><a>Account Dashboard</a></li>
-          </Link>
-          <Link href='/metaverse'>
-          <li><a>Metaverse</a></li>
           </Link>
           </ul>    
 
