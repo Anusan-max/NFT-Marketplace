@@ -81,7 +81,7 @@ export default function Home() {
               <img class='card-img-top' src={nft.image}/>
                 <div class='card-body'>
                   <h4 class="card-title">{nft.name}</h4>
-                    <p>{nft.description} and xample text some example text. John Doe is an architect and engineer</p>
+                    <p>{nft.description}</p>
                     <button type="button" class="btn btn-primary" onClick={()=> buyNFT(nft)}>Buy for {nft.price}</button>
                 </div>
               </div>

@@ -5,13 +5,20 @@ This project demonstrates a basic Hardhat use case. It comes with a sample contr
 Try running some of the following tasks:
 
 ```shell
+
+To compile 
 npx hardhat accounts
 npx hardhat compile
 npx hardhat clean
 npx hardhat test
-npx hardhat node
 node scripts/sample-script.js
 npx hardhat help
+
+to run 
+npm install 
+npx hardhat node
+npx hardhat run scripts/deploy.js --network localhost
+npm run dev
 
 
 hello 

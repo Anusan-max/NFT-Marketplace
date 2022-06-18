@@ -5,7 +5,7 @@ import Link from 'next/link'
 
 
 
-function KryptoBirdMarketplace({Component, pageProps}) {
+function SLNFTMarketplace({Component, pageProps}) {
 
 
   return (
@@ -33,5 +33,5 @@ function KryptoBirdMarketplace({Component, pageProps}) {
   )
 }
 
-export default KryptoBirdMarketplace
+export default SLNFTMarketplace
 
