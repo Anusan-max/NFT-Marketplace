@@ -10,6 +10,7 @@ import { nftaddress, nftmarketaddress } from '../config'
 
 import NFT from '../artifacts/contracts/NFT.sol/NFT.json'
 import KBMarket from '../artifacts/contracts/KBMarket.sol/KBMarket.json'
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 
 
@@ -67,31 +68,28 @@ export default function AccountDashBoard() {
 
 
   return (
-    <div className='p-4'>
-        <h1 style={{fontSize:'20px', color:'purple'}}>Tokens Minted</h1>
-        <div className='px-4' style={{maxWidth: '160px'}}>
-        <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 pt-4'>
+    <div className='container'>
+          <div><h1>Tokens Minted</h1></div>
+
+    <div className='row'>
+    <div class='container1'>
           {
             nfts.map((nft, i)=>(
-              <div key={i} className='border shadow rounded-x1 overflow-hidden'>
-                <img src={nft.image} />
-                <div className='p-4'>
-                  <p style={{height:'64px'}} className='text-3x1 font-semibold'>{
-                    nft.name}</p>
-                    <div style={{height:'72px', overflow:'hidden'}}>
-                      <p className='text-grey-400'>{nft.description}</p>
-                    </div>
-                    </div>
-                    <div className='p-4 bg-black'>
-                      <p className='text-3x-1 mb-4 font-bold text-white'>{nft.price} ETH</p>
-                    </div>
-                    </div>
-                    
+              <div className='col-sm-3'>
+
+              <div class='card'>
+              <img class='card-img-top' src={nft.image}/>
+                <div class='card-body'>
+                  <h4 class="card-title">{nft.name}</h4>
+                    <p>{nft.description} and xample text some example text. John Doe is an architect and engineer</p>
+                    <a href="#" class="btn btn-primary disabled">{nft.price} ETH</a>
+                </div>
+              </div>
+              </div>    
             ))
           }
-
-    </div>
-    </div>
-    </div>
+</div>
+</div>
+</div>
   )
 }

@@ -10,7 +10,7 @@ import { nftaddress, nftmarketaddress } from '../config'
 
 import NFT from '../artifacts/contracts/NFT.sol/NFT.json'
 import KBMarket from '../artifacts/contracts/KBMarket.sol/KBMarket.json'
-
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 
 export default function MyAssets() {
@@ -64,43 +64,23 @@ export default function MyAssets() {
 
 
   return (
-
-    <><div class="row">
-      <div class="column">
-        <div class="card">..</div>
-      </div>
-      <div class="column">
-        <div class="card">..</div>
-      </div>
-      <div class="column">
-        <div class="card">..</div>
-      </div>
-      <div class="column">
-        <div class="card">..</div>
-      </div>
-    </div><div class='container1'>
-        <div class='card'>
-          {nfts.map((nft, i) => (
-            <div key={i} class='card-header'>
-              <img src={nft.image} width="100%" />
+    <div className='container'>
+    <div className='row'>
+          {
+          nfts.map((nft, i) => (
+            <div className='col-sm-6'>
+            <div class='card'>
+            <img class='card-img-top' src={nft.image}/>
               <div class='card-body'>
-                <h4>{nft.name}</h4>
-                <div>
-                  <p>{nft.description}</p>
-                </div>
+                <h4 class="card-title">{nft.name}</h4>
+                  <p>{nft.description} and xample text some example text. John Doe is an architect and engineer</p>
+                  <a href="#" class="btn btn-primary disabled">{nft.price} ETH</a>
               </div>
-              <div class='user'>
-
-                <tag>{nft.price} ETH</tag>
-              </div>
-
             </div>
-
-          ))}
-
-        </div>
-      </div></>
-
-  
+            </div>
+          ))
+          }
+    </div>
+    </div>
   )
 }

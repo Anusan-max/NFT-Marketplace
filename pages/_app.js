@@ -1,17 +1,21 @@
 import '../styles/globals.css'
 import './app.css'
 import Link from 'next/link'
+import { useUnityContext } from "react-unity-webgl";
+
 
 
 
 function KryptoBirdMarketplace({Component, pageProps}) {
+
+
   return (
 
         <div>
           <div className='topnav-right'>
         <ul>
           <Link href='/'>
-         <li><a class="active">Main Marketplace</a></li>
+         <li><a>Main Marketplace</a></li>
           </Link>
           <Link href='/mint-item'>
           <li><a>Mint Tokens</a></li>
@@ -21,6 +25,9 @@ function KryptoBirdMarketplace({Component, pageProps}) {
           </Link>
           <Link href='/account-dashboard'>
           <li><a>Account Dashboard</a></li>
+          </Link>
+          <Link href='/metaverse'>
+          <li><a>Metaverse</a></li>
           </Link>
           </ul>    
 
