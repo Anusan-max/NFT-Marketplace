@@ -4,7 +4,7 @@ import Web3Modal from 'web3modal'
 import { create as ipfsHttpClient } from 'ipfs-http-client'
 import { nftaddress, nftmarketaddress } from '../config'
 import NFT from '../artifacts/contracts/NFT.sol/NFT.json'
-import KBMarket from '../artifacts/contracts/KBMarket.sol/KBMarket.json'
+import SLNFTMarket from '../artifacts/contracts/SLNFTMarket.sol/SLNFTMarket.json'
 import { useRouter } from 'next/router'
 
 
@@ -73,7 +73,7 @@ description:''})
        const price = ethers.utils.parseUnits(formInput.price, 'ether')
 
        // list the item for sale on the marketplace
-       contract = new ethers.Contract(nftmarketaddress, KBMarket.abi, signer)
+       contract = new ethers.Contract(nftmarketaddress, SLNFTMarket.abi, signer)
        let listingPrice = await contract.getListingPrice()
        listingPrice =listingPrice.toString()
 
@@ -113,9 +113,8 @@ description:''})
     fileUrl && (
         <img className='img1' width='250px' src={fileUrl} />
     )}
-<button class="button" onClick={createMarket}>
-  Mint NFT
-</button>
+
+    <button className="button" onClick={createMarket}>Mint NFT</button>
 </div>
        
    )

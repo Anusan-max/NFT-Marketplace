@@ -4,7 +4,7 @@ const fs = require('fs')
 
 async function main() {
 
-  const NFTMarket = await hre.ethers.getContractFactory("KBMarket");
+  const NFTMarket = await hre.ethers.getContractFactory("SLNFTMarket");
   const nftMarket = await NFTMarket.deploy();
   await nftMarket.deployed();
   console.log("nftMarket contract deployed to:", nftMarket.address);

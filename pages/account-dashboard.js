@@ -9,7 +9,7 @@ import Web3Modal from 'web3modal'
 import { nftaddress, nftmarketaddress } from '../config'
 
 import NFT from '../artifacts/contracts/NFT.sol/NFT.json'
-import KBMarket from '../artifacts/contracts/KBMarket.sol/KBMarket.json'
+import SLNFTMarket from '../artifacts/contracts/SLNFTMarket.sol/SLNFTMarket.json'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 
@@ -34,7 +34,7 @@ export default function AccountDashBoard() {
     const signer = provider.getSigner()
 
     const tokenContract = new ethers.Contract(nftaddress, NFT.abi, provider)
-    const marketContract = new ethers.Contract(nftmarketaddress, KBMarket.abi, signer)
+    const marketContract = new ethers.Contract(nftmarketaddress, SLNFTMarket.abi, signer)
     const data = await marketContract.fetchItemsCreated()
 
     const items = await Promise.all(data.map(async i => {
